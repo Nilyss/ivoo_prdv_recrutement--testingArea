@@ -1,0 +1,31 @@
+@use '../../../utils/styles/variables' as variables;
+
+.footer {
+  @media (max-width: variables.$breakpointMobile) {
+    padding: 1em;
+    justify-content: center;
+  }
+  min-height: 20vh;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1em 5em 1em 5em;
+  background-color: variables.$backgroundColorTertiary;
+  cursor: default;
+}
+
+.footer__logoWrapper {
+  width: 150px;
+}
+
+.footer__logoWrapper__img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer__copyright {
+  width: 100%;
+  color: variables.$fontColorDarken;
+}

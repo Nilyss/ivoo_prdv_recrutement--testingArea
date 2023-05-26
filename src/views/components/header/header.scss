@@ -1,0 +1,38 @@
+@use '../../../utils/styles/variables' as variables;
+
+.header {
+  @media(max-width: variables.$breakpointMobile) {
+    padding: 1em;
+    justify-content: center;
+  }
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 5em 1em 5em;
+  background-color: variables.$backgroundColorSecondary;
+  min-height: 20vh;
+  cursor: default;
+}
+
+.header__logoWrapper {
+  @media(max-width: variables.$breakpointMobile) {
+    width: 150px;
+  }
+  width: 250px;
+}
+
+.header__logoWrapper__goToHome__img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.header__titleWrapper {
+  @media(max-width: variables.$breakpointMobile) {
+    text-align: center;
+    font-size: 1em;
+  }
+  font-weight: 700;
+  font-size: 1.5em;
+  color: variables.$fontColorPrimary;
+}

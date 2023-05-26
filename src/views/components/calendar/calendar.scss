@@ -1,0 +1,150 @@
+@use '../../../utils/styles/variables' as variables;
+@use '../../../utils/styles/mixins' as mixins;
+
+.calendarSection {
+  @media (max-width: variables.$breakpointMobile) {
+    padding: 1em;
+    overflow-x: hidden;
+  }
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em 5em 2em 5em;
+  position: relative;
+}
+
+.calendarSection__calendarTitleWrapper {
+  @media (max-width: variables.$breakpointMobile) {
+    text-align: center;
+    font-size: 1em;
+  }
+  font-weight: 700;
+  font-size: 1.5em;
+  color: variables.$fontColorPrimary;
+}
+
+.calendarSection__calendarDescriptionWrapper {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  font-style: oblique;
+  font-size: 1em;
+}
+
+.calendarSection__calendarDescriptionWrapper__description {
+  @media (max-width: variables.$breakpointTablet) {
+    flex-flow: column;
+    gap: 1em;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .warning {
+    color: variables.$errorMessageColor;
+    font-size: 38px;
+  }
+}
+
+.calendarSection__calendarWrapper__calendar {
+  min-height: 60vh;
+}
+
+.calendarSection__calendar {
+  box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+}
+
+// ********** Modal **********
+.calendarModal {
+  @media (max-width: variables.$breakpointMobile) {
+    width: 90%;
+    position: fixed;
+    border-radius: 12px;
+    min-height: 65vh;
+  }
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  min-height: 55vh;
+  background: variables.$backgroundColorTertiary;
+  border-radius: 12px;
+  color: variables.$fontColorDarken;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  text-align: center;
+}
+
+.closeModalIcon {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.calendarModal__title {
+  &--date {
+    white-space: nowrap;
+  }
+}
+
+.calendarSection__hoursSelectWrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  width: 100%;
+}
+
+.calendarSection__hoursSelectWrapper__select {
+  @media (max-width: variables.$breakpointMobile) {
+    width: 100%;
+  }
+  text-align: center;
+  width: 30%;
+  padding: 0.5em;
+  border: 2px solid variables.$brandingColorPrimary;
+  border-radius: 4px;
+  font-size: 1em;
+
+  &:focus {
+    border: 2px solid #ffffff;
+  }
+}
+
+.calendarSection__hoursSelectWrapper__buttonWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.calendarSection__hoursSelectWrapper__button {
+  @include mixins.buttonStyle;
+}
+
+.valid {
+  color: variables.$successMessageColor;
+}
+
+.invalid {
+  color: variables.$errorMessageColor;
+}
+
+.loaderWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  @include mixins.loader;
+}

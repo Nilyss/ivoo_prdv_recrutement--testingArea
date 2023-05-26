@@ -1,0 +1,59 @@
+@use '../../../utils/styles/variables' as variables;
+@use '../../../utils/styles/mixins' as mixins;
+
+.landing {
+  @media (max-width: variables.$breakpointMobile) {
+    align-items: unset;
+  }
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.landing__false {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em;
+}
+
+.landing__false__title {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.landing__false__message {
+  font-style: oblique;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.landing__message {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  gap: 2em;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2em;
+  background: variables.$backgroundColorTertiary;
+  color: variables.$fontColorSecondary;
+  border-radius: 8px;
+}
+
+// ********** LOADER **********
+
+.loaderWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  @include mixins.loader
+}
